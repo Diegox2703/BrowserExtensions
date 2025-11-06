@@ -1,0 +1,1 @@
+export const logoStyles = 'dark:text-Neutral-100 text-Neutral-900'

@@ -1,0 +1,1 @@
+export const themeBtnStyles = 'dark:text-Neutral-100 dark:bg-Neutral-700 dark:hover:bg-Neutral-600 text-Neutral-900 bg-Neutral-100 hover:bg-Neutral-300 text-md p-3 rounded-xl cursor-pointer transition-colors'

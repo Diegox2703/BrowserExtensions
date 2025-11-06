@@ -1,0 +1,1 @@
+export const headerStyles = 'dark:bg-Neutral-800 bg-Neutral-0 flex justify-between rounded-2xl px-3 py-2.5 mt-8'
