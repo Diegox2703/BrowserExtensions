@@ -1,1 +1,2 @@
-export * from './extensionFilter.types'
+export * from './extension.types';
+export * from './extensionFilter.types';

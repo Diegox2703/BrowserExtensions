@@ -2,7 +2,7 @@ import { ExtensionList } from '@/components/features'
 
 export function Main() {
   return (
-    <main>
+    <main className='pb-20'>
       <ExtensionList/>
     </main>
   )
