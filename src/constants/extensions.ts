@@ -1,6 +1,6 @@
-import type { ExtensionProps } from "@/types";
+import type { Extension } from "@/types";
 
-export const EXTENSIONS: ExtensionProps[] = [
+export const EXTENSIONS: Extension[] = [
     {
         "logo": "/images/logo-devlens.svg",
         "name": "DevLens",
@@ -73,4 +73,10 @@ export const EXTENSIONS: ExtensionProps[] = [
         "description": "Enhanced developer console with advanced filtering and logging.",
         "isActive": true
     }
+] as const
+
+export const EXTENSION_FILTERS = [
+    'All',
+    'Active',
+    'Inactive'
 ] as const

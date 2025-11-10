@@ -1,5 +1,5 @@
 import { Button, Switch } from '@/components/ui'
-import type { ExtensionProps } from '@/types'
+import type { ExtensionProps } from './extension-item.types'
 
 export function ExtensionItem({ logo, name, description, isActive }: ExtensionProps) {
   return (

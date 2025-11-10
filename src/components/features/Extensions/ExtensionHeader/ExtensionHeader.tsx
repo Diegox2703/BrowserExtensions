@@ -8,7 +8,10 @@ export function ExtensionHeader() {
       <div className="flex gap-2">
         {
           EXTENSION_FILTERS.map(filter => (
-            <ExtensionFilter key={ filter.text } text={ filter.text }/>
+            <ExtensionFilter 
+              key={ filter } 
+              label={ filter }
+            />
           ))
         }
       </div>
