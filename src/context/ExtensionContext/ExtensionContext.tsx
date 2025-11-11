@@ -9,8 +9,6 @@ export const ExtensionProvider = ({ children }: ExtensionProviderProps) => {
     const [state, dispatch] = useReducer(extensionReducer, initialState)
     const { filter } = state
 
-    console.log(state.extensions)
-
     const setFilter = (selectedFilter: ExtensionFilterOptions) => (
         dispatch(extensionActionCreators.setFilter(selectedFilter))
     )
@@ -45,7 +43,7 @@ export const ExtensionProvider = ({ children }: ExtensionProviderProps) => {
 export const useExtension = () => {
     const context = useContext(ExtensionContext)
 
-    if (!context) throw new Error('useExtension must be used inside of an AuthProvider')
+    if (!context) throw new Error('useExtension must be used inside of an ExtensionProvider')
 
     return context
 }

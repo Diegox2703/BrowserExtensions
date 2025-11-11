@@ -6,12 +6,7 @@ export interface ExtensionState {
     filter: ExtensionFilterOptions
 }
 
-export interface ExtensionAction {
-    type: keyof typeof EXTENSION_ACTIONS
-    payload: ExtensionPayload
-}
-
-interface ExtensionPayload {
-    selectedFilter: ExtensionFilterOptions
-    extension: string
-}
+export type ExtensionAction = 
+ | { type: typeof EXTENSION_ACTIONS.SET_FILTER, payload: { selectedFilter: ExtensionFilterOptions } }
+ | { type: typeof EXTENSION_ACTIONS.REMOVE_EXTENSION, payload: { extension: string } }
+ | { type: typeof EXTENSION_ACTIONS.CHECK_EXTENSION, payload: { extension: string } }

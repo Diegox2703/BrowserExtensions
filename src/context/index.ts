@@ -1,2 +1,2 @@
-export { ExtensionProvider } from './ExtensionContext'
-export { useExtension } from './ExtensionContext'
+export { ExtensionProvider, useExtension } from './ExtensionContext'
+export { ThemeProvider, useTheme } from './ThemeContext'

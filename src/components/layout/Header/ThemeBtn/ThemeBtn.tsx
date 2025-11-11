@@ -1,15 +1,8 @@
-import { useState } from "react";
 import { themeBtnStyles } from "./themeBtn.styles";
+import { useTheme } from "@/context";
 
 export function ThemeBtn() {
-  const [isDark, setIsDark] = useState(true)
-
-  const handleTheme = () => {
-    document.documentElement.classList.toggle('dark')
-
-    if (document.documentElement.classList.contains('dark')) return setIsDark(true)
-    setIsDark(false)
-  }
+  const { isDark, handleTheme } = useTheme()
 
   return (
     <button onClick={handleTheme} className={themeBtnStyles}>
