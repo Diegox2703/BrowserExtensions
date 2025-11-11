@@ -1,22 +1,23 @@
 import { Button, Switch } from '@/components/ui'
 import type { ExtensionProps } from './extension-item.types'
 import { useExtension } from '@/context'
+import { extensionItemStyles } from './extensionItem.styles'
 
 export function ExtensionItem({ logo, name, description, isActive }: ExtensionProps) {
   const { removeExtension, checkExtension } = useExtension()
 
   return (
-    <article className="dark:bg-Neutral-800 dark:border dark:border-Neutral-600 dark:shadow-none shadow-sm shadow-Neutral-300 bg-Neutral-0 aspect-4/2 rounded-2xl p-4 flex flex-col justify-between">
-      <section className="flex gap-4 items-start">
+    <article className={extensionItemStyles.container}>
+      <section className={extensionItemStyles.detailsSection}>
         <div>
-            <img className='max-w-none' src={ logo } alt="extension-image"/>
+            <img className={extensionItemStyles.image} src={ logo } alt="extension-image"/>
         </div>
-        <div className='flex flex-col gap-3'>
-            <h1 className='dark:text-Neutral-100 text-Neutral-900 font-bold text-lg leading-none'>{ name }</h1>
-            <p className='dark:text-Neutral-300 text-Neutral-600 text-sm'>{ description }</p>
+        <div className={extensionItemStyles.detailsWrapper}>
+            <h1 className={extensionItemStyles.name}>{ name }</h1>
+            <p className={extensionItemStyles.description}>{ description }</p>
         </div>
       </section>
-      <section className='flex justify-between items-center'>
+      <section className={extensionItemStyles.actionBtns}>
         <Button onClick={() => removeExtension(name)} text='Remove'/>
         <Switch onChange={() =>checkExtension(name)} id={ name } isChecked={ isActive }/>
       </section>

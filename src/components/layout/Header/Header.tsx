@@ -1,5 +1,5 @@
-import { Logo } from '../Logo'
-import { ThemeBtn } from '../ThemeBtn'
+import { Logo } from './Logo'
+import { ThemeBtn } from './ThemeBtn'
 import { headerStyles } from './header.styles'
 
 export function Header() {
