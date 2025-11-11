@@ -13,4 +13,5 @@ export interface ExtensionAction {
 
 interface ExtensionPayload {
     selectedFilter: ExtensionFilterOptions
+    extension: string
 }

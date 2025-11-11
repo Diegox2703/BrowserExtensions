@@ -1,7 +1,10 @@
 import { Button, Switch } from '@/components/ui'
 import type { ExtensionProps } from './extension-item.types'
+import { useExtension } from '@/context'
 
 export function ExtensionItem({ logo, name, description, isActive }: ExtensionProps) {
+  const { removeExtension, checkExtension } = useExtension()
+
   return (
     <article className="dark:bg-Neutral-800 dark:border dark:border-Neutral-600 dark:shadow-none shadow-sm shadow-Neutral-300 bg-Neutral-0 aspect-4/2 rounded-2xl p-4 flex flex-col justify-between">
       <section className="flex gap-4 items-start">
@@ -14,8 +17,8 @@ export function ExtensionItem({ logo, name, description, isActive }: ExtensionPr
         </div>
       </section>
       <section className='flex justify-between items-center'>
-        <Button text='Remove'/>
-        <Switch id={ name } isChecked={ isActive }/>
+        <Button onClick={() => removeExtension(name)} text='Remove'/>
+        <Switch onChange={() =>checkExtension(name)} id={ name } isChecked={ isActive }/>
       </section>
     </article>
   )

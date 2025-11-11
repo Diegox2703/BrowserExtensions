@@ -1,6 +1,6 @@
 import { ExtensionHeader } from '../ExtensionHeader'
 import { ExtensionItem } from '../ExtensionItem'
-import { useExtension } from '@/context/ExtensionContext'
+import { useExtension } from '@/context'
 
 export function ExtensionList() {
   const { filteredExtensions } = useExtension()

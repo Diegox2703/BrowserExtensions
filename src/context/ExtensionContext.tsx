@@ -8,9 +8,19 @@ const ExtensionContext = createContext<ExtensionContext | undefined>(undefined)
 export const ExtensionProvider = ({ children }: ExtensionProviderProps) => {
     const [state, dispatch] = useReducer(extensionReducer, initialState)
     const { filter } = state
-    
+
+    console.log(state.extensions)
+
     const setFilter = (selectedFilter: ExtensionFilterOptions) => (
         dispatch(extensionActionCreators.setFilter(selectedFilter))
+    )
+
+    const removeExtension = (extension: string) => (
+        dispatch(extensionActionCreators.removeExtension(extension))
+    )
+
+    const checkExtension = (extension: string) => (
+        dispatch(extensionActionCreators.checkExtension(extension))
     )
 
     const filteredExtensions = () => {
@@ -20,7 +30,13 @@ export const ExtensionProvider = ({ children }: ExtensionProviderProps) => {
     }
 
     return (
-        <ExtensionContext.Provider value={{ filteredExtensions, setFilter, filter }}>
+        <ExtensionContext.Provider value={{ 
+            filteredExtensions, 
+            setFilter, 
+            removeExtension,
+            checkExtension, 
+            filter
+        }}>
             { children }
         </ExtensionContext.Provider>
     )
